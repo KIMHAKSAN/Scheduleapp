@@ -9,7 +9,7 @@ public interface MemoService {
 
     MemoResponseDto saveMemo(MemoRequestDto requestDto);
 
-//    List<MemoResponseDto> findAllMemos();
+    List<MemoResponseDto> findAllMemos();
 //
 //    MemoResponseDto findMemoById(Long id);
 //

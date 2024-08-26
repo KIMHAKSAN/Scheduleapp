@@ -10,7 +10,7 @@ public interface MemoRepository {
 
     void saveMemo(Memo memo);
 
-//    Map<Long, Memo> findAllMemos();
+    Map<Long, Memo> findAllMemos();
 //
 //    Memo findMemoById(Long id);
 //

@@ -26,11 +26,11 @@ public class MemoController {
         return new ResponseEntity<>(memoService.saveMemo(requestDto), HttpStatus.CREATED);
     }
 
-//    @GetMapping
-//    public List<MemoResponseDto> findAllMemos() {
-//
-//        return memoService.findAllMemos();
-//    }
+    @GetMapping
+    public List<MemoResponseDto> findAllMemos() {
+
+        return memoService.findAllMemos();
+    }
 //
 //    @GetMapping("/{id}")
 //    public ResponseEntity<MemoResponseDto> findMemoById(@PathVariable Long id) {

@@ -22,12 +22,12 @@ public class MemoRepositoryImpl implements MemoRepository {
         memoList.put(memo.getId(), memo);
     }
 
-//    @Override
-//    public Map<Long, Memo> findAllMemos() {
-//
-//        return memoList;
-//    }
-//
+    @Override
+    public Map<Long, Memo> findAllMemos() {
+
+        return memoList;
+    }
+
 //    @Override
 //    public Memo findMemoById(Long id) {
 //
