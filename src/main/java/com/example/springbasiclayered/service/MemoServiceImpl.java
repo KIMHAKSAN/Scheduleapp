@@ -74,7 +74,7 @@ public class MemoServiceImpl implements MemoService {
 
     @Override
     public MemoResponseDto updateMemo(Long id, String title, String contents) {
-        // memo 조
+        // memo 조회
         Memo memo = memoRepository.findMemoById(id);
 
         // NPE 방지
