@@ -59,15 +59,7 @@ public class MemoController {
     @GetMapping("/{id}")
     public ResponseEntity<MemoResponseDto> findMemoById(@PathVariable Long id) {
 
-        MemoResponseDto responseDto;
-
-        try {
-            responseDto = memoService.findMemoById(id);
-        } catch (ResponseStatusException e) {
-            return new ResponseEntity<>(e.getStatusCode());
-        }
-
-        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+        return new ResponseEntity<>(memoService.findMemoById(id), HttpStatus.OK);
     }
 
     /**
@@ -82,15 +74,8 @@ public class MemoController {
             @PathVariable Long id,
             @RequestBody MemoRequestDto requestDto
     ) {
-        MemoResponseDto responseDto;
 
-        try {
-            responseDto = memoService.updateMemo(id, requestDto.getTitle(), requestDto.getContents());
-        } catch (ResponseStatusException e) {
-            return new ResponseEntity<>(e.getStatusCode());
-        }
-
-        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+        return new ResponseEntity<>(memoService.updateMemo(id, requestDto.getTitle(), requestDto.getContents()), HttpStatus.OK);
     }
 
     /**
@@ -105,15 +90,8 @@ public class MemoController {
             @PathVariable Long id,
             @RequestBody MemoRequestDto requestDto
     ) {
-        MemoResponseDto responseDto;
 
-        try {
-            responseDto = memoService.updateTitle(id, requestDto.getTitle(), requestDto.getContents());
-        } catch (ResponseStatusException e) {
-            return new ResponseEntity<>(e.getStatusCode());
-        }
-
-        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+        return new ResponseEntity<>(memoService.updateTitle(id, requestDto.getTitle(), requestDto.getContents()), HttpStatus.OK);
     }
 
     /**
@@ -125,12 +103,7 @@ public class MemoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMemo(@PathVariable Long id) {
 
-        try {
-            memoService.deleteMemo(id);
-        } catch (ResponseStatusException e) {
-            return new ResponseEntity<>(e.getStatusCode());
-        }
-
+        memoService.deleteMemo(id);
         // 성공한 경우
         return new ResponseEntity<>(HttpStatus.OK);
     }
