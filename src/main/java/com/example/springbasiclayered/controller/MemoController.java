@@ -87,8 +87,8 @@ public class MemoController {
             return new ResponseEntity<>(e.getStatusCode());
         }
 
-        // 일어날 수 없는 경우
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        // 성공한 경우
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
