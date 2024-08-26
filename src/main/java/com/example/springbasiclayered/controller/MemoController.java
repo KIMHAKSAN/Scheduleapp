@@ -78,17 +78,17 @@ public class MemoController {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteMemo(@PathVariable Long id) {
-//
-//        try {
-//            memoService.deleteMemo(id);
-//        } catch (ResponseStatusException e) {
-//            return new ResponseEntity<>(e.getStatusCode());
-//        }
-//
-//        // 일어날 수 없는 경우
-//        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMemo(@PathVariable Long id) {
+
+        try {
+            memoService.deleteMemo(id);
+        } catch (ResponseStatusException e) {
+            return new ResponseEntity<>(e.getStatusCode());
+        }
+
+        // 일어날 수 없는 경우
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
 
 }

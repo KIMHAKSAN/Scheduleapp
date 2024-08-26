@@ -14,6 +14,6 @@ public interface MemoRepository {
 
     Memo findMemoById(Long id);
 
-//    void deleteMemo(Long id);
+    void deleteMemo(Long id);
 
 }
