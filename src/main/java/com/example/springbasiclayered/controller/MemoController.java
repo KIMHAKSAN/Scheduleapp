@@ -62,22 +62,22 @@ public class MemoController {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-//    @PatchMapping("/{id}")
-//    public ResponseEntity<MemoResponseDto> updateTitle(
-//            @PathVariable Long id,
-//            @RequestBody MemoRequestDto requestDto
-//    ) {
-//        MemoResponseDto responseDto;
-//
-//        try {
-//            responseDto = memoService.updateTitle(id, requestDto.getTitle(), requestDto.getContents());
-//        } catch (ResponseStatusException e) {
-//            return new ResponseEntity<>(e.getStatusCode());
-//        }
-//
-//        return new ResponseEntity<>(responseDto, HttpStatus.OK);
-//    }
-//
+    @PatchMapping("/{id}")
+    public ResponseEntity<MemoResponseDto> updateTitle(
+            @PathVariable Long id,
+            @RequestBody MemoRequestDto requestDto
+    ) {
+        MemoResponseDto responseDto;
+
+        try {
+            responseDto = memoService.updateTitle(id, requestDto.getTitle(), requestDto.getContents());
+        } catch (ResponseStatusException e) {
+            return new ResponseEntity<>(e.getStatusCode());
+        }
+
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+    }
+
 //    @DeleteMapping("/{id}")
 //    public ResponseEntity<Void> deleteMemo(@PathVariable Long id) {
 //

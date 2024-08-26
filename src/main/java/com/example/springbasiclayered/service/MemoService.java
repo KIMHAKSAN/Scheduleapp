@@ -15,7 +15,7 @@ public interface MemoService {
 
     MemoResponseDto updateMemo(Long id, String title, String contents);
 
-//    MemoResponseDto updateTitle(Long id, String title, String contents);
+    MemoResponseDto updateTitle(Long id, String title, String contents);
 //
 //    void deleteMemo(Long id);
 
