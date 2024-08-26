@@ -11,9 +11,9 @@ public interface MemoRepository {
     void saveMemo(Memo memo);
 
     Map<Long, Memo> findAllMemos();
-//
-//    Memo findMemoById(Long id);
-//
+
+    Memo findMemoById(Long id);
+
 //    void deleteMemo(Long id);
 
 }

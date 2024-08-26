@@ -52,23 +52,23 @@ public class MemoServiceImpl implements MemoService {
 
         return responseList;
     }
-//
-//    @Override
-//    public MemoResponseDto findMemoById(Long id) {
-//        // 식별자의 Memo가 없다면?
-//        Memo memo = memoRepository.findMemoById(id);
-//
-//        // NPE 방지
-//        if (memo == null) {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
-//        }
-//
-//        return new MemoResponseDto(memo);
-//    }
-//
+
+    @Override
+    public MemoResponseDto findMemoById(Long id) {
+        // 식별자의 Memo가 없다면?
+        Memo memo = memoRepository.findMemoById(id);
+
+        // NPE 방지
+        if (memo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
+        }
+
+        return new MemoResponseDto(memo);
+    }
+
 //    @Override
 //    public MemoResponseDto updateMemo(Long id, String title, String contents) {
-//        // memo 조회
+//        // memo 조
 //        Memo memo = memoRepository.findMemoById(id);
 //
 //        // NPE 방지

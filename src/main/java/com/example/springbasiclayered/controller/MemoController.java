@@ -31,20 +31,20 @@ public class MemoController {
 
         return memoService.findAllMemos();
     }
-//
-//    @GetMapping("/{id}")
-//    public ResponseEntity<MemoResponseDto> findMemoById(@PathVariable Long id) {
-//
-//        MemoResponseDto responseDto;
-//
-//        try {
-//            responseDto = memoService.findMemoById(id);
-//        } catch (ResponseStatusException e) {
-//            return new ResponseEntity<>(e.getStatusCode());
-//        }
-//
-//        return new ResponseEntity<>(responseDto, HttpStatus.OK);
-//    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<MemoResponseDto> findMemoById(@PathVariable Long id) {
+
+        MemoResponseDto responseDto;
+
+        try {
+            responseDto = memoService.findMemoById(id);
+        } catch (ResponseStatusException e) {
+            return new ResponseEntity<>(e.getStatusCode());
+        }
+
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+    }
 //
 //    @PutMapping("/{id}")
 //    public ResponseEntity<MemoResponseDto> updateMemo(

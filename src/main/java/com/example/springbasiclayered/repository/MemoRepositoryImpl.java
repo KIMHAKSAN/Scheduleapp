@@ -28,12 +28,12 @@ public class MemoRepositoryImpl implements MemoRepository {
         return memoList;
     }
 
-//    @Override
-//    public Memo findMemoById(Long id) {
-//
-//        return memoList.get(id);
-//    }
-//
+    @Override
+    public Memo findMemoById(Long id) {
+
+        return memoList.get(id);
+    }
+
 //    @Override
 //    public void deleteMemo(Long id) {
 //
