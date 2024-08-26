@@ -103,7 +103,7 @@ public class MemoServiceImpl implements MemoService {
 
         memo.update(title);
 
-        return null;
+        return new MemoResponseDto(memo);
     }
 
     @Override
