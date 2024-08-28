@@ -30,11 +30,8 @@ public class MemoServiceImpl implements MemoService {
     @Override
     public MemoResponseDto saveMemo(MemoRequestDto requestDto) {
 
-        // MemoId 식별자 계산
-        Long memoId = memoRepository.getMemoId();
-
         // 요청받은 데이터로 Memo 객체 생성
-        Memo memo = new Memo(memoId, requestDto.getTitle(), requestDto.getContents());
+        Memo memo = new Memo(requestDto.getTitle(), requestDto.getContents());
 
         // Inmemory DB에 Memo 저장
         memoRepository.saveMemo(memo);
