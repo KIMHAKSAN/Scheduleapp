@@ -18,13 +18,15 @@ public class MemoRepositoryImpl implements MemoRepository {
 
 
     @Override
-    public void saveMemo(Memo memo) {
+    public Memo saveMemo(Memo memo) {
 
         // memo 식별자 자동 생성
         Long memoId = memoList.isEmpty() ? 1 : Collections.max(memoList.keySet()) + 1;
         memo.setId(memoId);
 
         memoList.put(memoId, memo);
+
+        return memo;
     }
 
     @Override
