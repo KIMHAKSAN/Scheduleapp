@@ -104,7 +104,7 @@ public class MemoServiceImpl implements MemoService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The title and content are required values.");
         }
 
-        memo.update(title);
+        memo.updateTitle(title);
 
         return new MemoResponseDto(memo);
     }
