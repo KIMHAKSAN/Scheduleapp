@@ -1,5 +1,6 @@
 package com.example.springbasiclayered.repository;
 
+import com.example.springbasiclayered.dto.MemoResponseDto;
 import com.example.springbasiclayered.entity.Memo;
 import org.springframework.stereotype.Repository;
 
@@ -30,9 +31,18 @@ public class MemoRepositoryImpl implements MemoRepository {
     }
 
     @Override
-    public Map<Long, Memo> findAllMemos() {
+    public List<MemoResponseDto> findAllMemos() {
 
-        return memoList;
+        // init List
+        List<MemoResponseDto> allMemos = new ArrayList<>();
+
+        // HashMap<Memo> -> List<MemoResponseDto>
+        for (Memo memo : memoList.values()) {
+            MemoResponseDto responseDto = new MemoResponseDto(memo);
+            allMemos.add(responseDto);
+        }
+
+        return allMemos;
     }
 
     @Override

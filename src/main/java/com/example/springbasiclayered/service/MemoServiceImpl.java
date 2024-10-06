@@ -41,19 +41,11 @@ public class MemoServiceImpl implements MemoService {
 
     @Override
     public List<MemoResponseDto> findAllMemos() {
-        // init List
-        List<MemoResponseDto> responseList = new ArrayList<>();
 
         // 전체 조회
-        Map<Long, Memo> memoList = memoRepository.findAllMemos();
+        List<MemoResponseDto> allMemos = memoRepository.findAllMemos();
 
-        // HashMap<Memo> -> List<MemoResponseDto>
-        for (Memo memo : memoList.values()) {
-            MemoResponseDto responseDto = new MemoResponseDto(memo);
-            responseList.add(responseDto);
-        }
-
-        return responseList;
+        return allMemos;
     }
 
     @Override
